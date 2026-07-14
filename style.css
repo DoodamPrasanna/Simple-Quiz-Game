@@ -1,50 +1,57 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #001e4d;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-.app{
-    background-color:#ccdbf3;
-    margin: 80px 350px ;
-    height: 80vh;
-    width: 50vw;
+.app {
+    background-color: #ccdbf3;
+    width: 100%;
+    max-width: 700px;
+    min-height: 500px;
     border-radius: 10px;
+    padding: 20px;
 }
 
-.app h1{
+.app h1 {
     text-align: center;
-    padding: 20px;
+    padding: 15px;
+    font-size: 2rem;
 }
 
-#question{
-    margin:0px 60px 20px;
-    padding: 20px;
+#question {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 1.3rem;
+    text-align: center;
 }
 
-#answer-buttons{
+#answer-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 
-
-
-.btn{
+.btn {
     background-color: #aec6ee;
-    width: 80%;
-    height: 6vh;
-    font-size: 20px;
+    width: 100%;
+    max-width: 500px;
+    min-height: 50px;
+    font-size: 18px;
     border: none;
     border-radius: 8px;
-    transition: 
+    transition:
         background 0.3s,
         color 0.3s,
         transform 0.18s cubic-bezier(.4,2,.6,.9),
@@ -52,71 +59,143 @@ body{
     box-shadow: 0 2px 8px rgba(0,30,77,0.08);
     cursor: pointer;
     animation: btnPopIn 0.5s;
+    padding: 12px;
 }
 
 @keyframes btnPopIn {
-    from { opacity: 0; transform: scale(0.8);}
-    to { opacity: 1; transform: scale(1);}
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .btn:hover:not(:disabled) {
     background-color: #001e4d;
     color: #fff;
-    transform: scale(1.06) translateY(-2px);
+    transform: scale(1.03);
     box-shadow: 0 6px 18px rgba(0,30,77,0.18);
 }
 
 .btn:active:not(:disabled) {
     transform: scale(0.97);
-    box-shadow: 0 2px 8px rgba(0,30,77,0.08);
 }
 
-#nextbtn{
-    height: 6vh;
-    width:150px;
-    margin: 20px 300px;
+#nextbtn {
+    display: block;
+    margin: 25px auto 0;
+    height: 50px;
+    width: 160px;
     background-color: #001e4d;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     border-radius: 5px;
     border: none;
-    transition: 
+    transition:
         background 0.3s,
         color 0.3s,
         transform 0.18s cubic-bezier(.4,2,.6,.9),
         box-shadow 0.25s;
     box-shadow: 0 2px 8px rgba(0,30,77,0.08);
     cursor: pointer;
-    animation: btnPopIn 0.7s;
 }
 
 #nextbtn:hover:not(:disabled) {
     background-color: #aec6ee;
     color: #001e4d;
-    transform: scale(1.08) translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0,30,77,0.18);
+    transform: scale(1.05);
 }
 
 #nextbtn:active:not(:disabled) {
     transform: scale(0.97);
-    box-shadow: 0 2px 8px rgba(0,30,77,0.08);
 }
 
-
-
-#timer{
+#timer {
     display: flex;
     justify-content: center;
-    height: 5vh;
+    align-items: center;
+    min-height: 50px;
     font-weight: 600;
     font-size: 30px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
-.correct{
+.correct {
     background-color: rgb(103, 208, 103);
 }
 
-.incorrect{
+.incorrect {
     background-color: rgb(222, 99, 99);
+}
+
+/* TABLETS */
+
+@media (max-width: 768px) {
+
+    .app {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .app h1 {
+        font-size: 1.8rem;
+    }
+
+    #question {
+        font-size: 1.15rem;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+
+    #timer {
+        font-size: 26px;
+    }
+}
+
+/* MOBILE PHONES */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .app {
+        width: 100%;
+        padding: 15px;
+        min-height: auto;
+    }
+
+    .app h1 {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    #question {
+        font-size: 1rem;
+        padding: 5px;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 15px;
+        min-height: 48px;
+    }
+
+    #nextbtn {
+        width: 130px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    #timer {
+        font-size: 22px;
+        margin-top: 15px;
+    }
 }
