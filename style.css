@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+body{
+    background-color: #001e4d;
+}
+
+.app{
+    background-color:#ccdbf3;
+    margin: 80px 350px ;
+    height: 80vh;
+    width: 50vw;
+    border-radius: 10px;
+}
+
+.app h1{
+    text-align: center;
+    padding: 20px;
+}
+
+#question{
+    margin:0px 60px 20px;
+    padding: 20px;
+}
+
+#answer-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+.btn{
+    background-color: #aec6ee;
+    width: 80%;
+    height: 6vh;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
+    transition: 
+        background 0.3s,
+        color 0.3s,
+        transform 0.18s cubic-bezier(.4,2,.6,.9),
+        box-shadow 0.25s;
+    box-shadow: 0 2px 8px rgba(0,30,77,0.08);
+    cursor: pointer;
+    animation: btnPopIn 0.5s;
+}
+
+@keyframes btnPopIn {
+    from { opacity: 0; transform: scale(0.8);}
+    to { opacity: 1; transform: scale(1);}
+}
+
+.btn:hover:not(:disabled) {
+    background-color: #001e4d;
+    color: #fff;
+    transform: scale(1.06) translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,30,77,0.18);
+}
+
+.btn:active:not(:disabled) {
+    transform: scale(0.97);
+    box-shadow: 0 2px 8px rgba(0,30,77,0.08);
+}
+
+#nextbtn{
+    height: 6vh;
+    width:150px;
+    margin: 20px 300px;
+    background-color: #001e4d;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    transition: 
+        background 0.3s,
+        color 0.3s,
+        transform 0.18s cubic-bezier(.4,2,.6,.9),
+        box-shadow 0.25s;
+    box-shadow: 0 2px 8px rgba(0,30,77,0.08);
+    cursor: pointer;
+    animation: btnPopIn 0.7s;
+}
+
+#nextbtn:hover:not(:disabled) {
+    background-color: #aec6ee;
+    color: #001e4d;
+    transform: scale(1.08) translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,30,77,0.18);
+}
+
+#nextbtn:active:not(:disabled) {
+    transform: scale(0.97);
+    box-shadow: 0 2px 8px rgba(0,30,77,0.08);
+}
+
+
+
+#timer{
+    display: flex;
+    justify-content: center;
+    height: 5vh;
+    font-weight: 600;
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+.correct{
+    background-color: rgb(103, 208, 103);
+}
+
+.incorrect{
+    background-color: rgb(222, 99, 99);
+}
